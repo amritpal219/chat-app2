@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveChat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="logo-icon">⬡</span>
+        <h1>LiveChat</h1>
+      </div>
+      <p class="login-sub">Real-time. No BS. Just chat.</p>
+      <div class="input-group">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="Enter your username..."
+          maxlength="20"
+          autocomplete="off"
+        />
+        <button id="join-btn">Join →</button>
+      </div>
+      <p class="login-hint">No signup. Just a name.</p>
+    </div>
+  </div>
+
+  <!-- CHAT APP -->
+  <div id="chat-app" class="hidden">
+    <div class="app-layout">
+
+      <!-- SIDEBAR: Online Users -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-label">Online</span>
+          <span id="user-count" class="user-count">0</span>
+        </div>
+        <ul id="user-list"></ul>
+      </aside>
+
+      <!-- MAIN CHAT -->
+      <main class="chat-main">
+        <header class="chat-header">
+          <div class="header-left">
+            <span class="logo-icon-sm">⬡</span>
+            <span class="chat-title">LiveChat</span>
+          </div>
+          <div class="header-right">
+            <span class="status-dot"></span>
+            <span id="header-username" class="header-username"></span>
+          </div>
+        </header>
+
+        <div id="messages" class="messages-area"></div>
+
+        <div class="input-area">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+            maxlength="500"
+            autocomplete="off"
+          />
+          <button id="send-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
